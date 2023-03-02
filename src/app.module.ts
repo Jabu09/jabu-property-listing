@@ -5,9 +5,15 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ListingModule } from './listing/listing.module';
 import { ListingAgentModule } from './listing-agent/listing-agent.module';
 import { OrganisationModule } from './organisation/organisation.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      envFilePath: ['.env'],
+      load: [],
+      isGlobal: true,
+    }),
     MongooseModule.forRoot(
       'mongodb+srv://Jabulani:YdAE0GsvovNjL62J@cluster0.bpyfdom.mongodb.net/?retryWrites=true&w=majority',
     ),
