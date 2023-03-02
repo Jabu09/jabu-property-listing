@@ -1,5 +1,8 @@
 {
     "version":2,
+    "env":{
+        "CONNECTION_STRING":"@connectionstring"
+    },
     "builds":[
         {
             "src":"src/main.ts",
