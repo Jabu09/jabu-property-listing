@@ -15,7 +15,7 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true,
     }),
     MongooseModule.forRoot(
-      'mongodb+srv://Jabulani:YdAE0GsvovNjL62J@cluster0.bpyfdom.mongodb.net/?retryWrites=true&w=majority',
+      `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@cluster0.bpyfdom.mongodb.net/?retryWrites=true&w=majority`,
     ),
     ListingModule,
     ListingAgentModule,
