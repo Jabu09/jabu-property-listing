@@ -5,14 +5,26 @@ export type ListingDocument = HydratedDocument<Listing>;
 
 @Schema()
 export class Listing {
-  @Prop()
-  name: string;
+  @Prop({ required: true })
+  agent: string;
 
-  @Prop()
-  age: number;
+  @Prop({ required: true })
+  title: string;
 
-  @Prop()
-  breed: string;
+  @Prop({ required: true })
+  description: string;
+
+  @Prop({ required: true })
+  status: string;
+
+  @Prop({ required: true })
+  organisation: string;
+
+  @Prop({ required: true })
+  listingType: string;
+
+  @Prop({ required: true })
+  listingSector: string;
 }
 
 export const ListingSchema = SchemaFactory.createForClass(Listing);

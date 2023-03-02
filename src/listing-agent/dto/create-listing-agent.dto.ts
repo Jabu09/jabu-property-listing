@@ -1,39 +1,29 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, IsString } from 'class-validator';
 
-export class CreateListingDto {
+export class CreateListingAgentDto {
   @ApiProperty({ description: '_id' })
   @IsNotEmpty()
   @IsString()
-  readonly agent: string;
+  readonly firstName: string;
 
   @ApiProperty({ description: '_id' })
   @IsNotEmpty()
   @IsString()
-  readonly title: string;
+  readonly lastName: string;
 
   @ApiProperty({ description: '_id' })
   @IsNotEmpty()
   @IsString()
-  readonly description: string;
+  readonly email: string;
 
   @ApiProperty({ description: '_id' })
   @IsNotEmpty()
   @IsString()
-  readonly status: string;
+  readonly contactNumber: string;
 
   @ApiProperty({ description: '_id' })
   @IsNotEmpty()
   @IsString()
-  readonly organisation: string;
-
-  @ApiProperty({ description: '_id' })
-  @IsNotEmpty()
-  @IsString()
-  readonly listingType: string;
-
-  @ApiProperty({ description: '_id' })
-  @IsNotEmpty()
-  @IsString()
-  readonly listingSector: string;
+  readonly profileImageUrl: string;
 }
