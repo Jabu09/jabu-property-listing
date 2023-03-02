@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsObject, IsString, IsUrl } from 'class-validator';
 
 export class CreateOrganisationDto {
   @ApiProperty({ description: '_id' })
@@ -8,8 +8,7 @@ export class CreateOrganisationDto {
   name: string;
 
   @ApiProperty({ description: '_id' })
-  @IsNotEmpty()
-  @IsString()
+  @IsUrl()
   logoUrl: string;
 
   @ApiProperty({ description: '_id' })

@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
+import { PropertyUnit } from './propertyUnit.schema';
 
 export type ListingDocument = HydratedDocument<Listing>;
 
@@ -25,6 +26,12 @@ export class Listing {
 
   @Prop({ required: true })
   listingSector: string;
+
+  @Prop()
+  unit: PropertyUnit;
+
+  @Prop()
+  images: string[];
 }
 
 export const ListingSchema = SchemaFactory.createForClass(Listing);

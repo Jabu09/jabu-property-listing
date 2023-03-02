@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsArray, IsNotEmpty, IsNumber, IsObject, IsString } from 'class-validator';
 
 export class CreateListingDto {
   @ApiProperty({ description: '_id' })
@@ -36,4 +36,17 @@ export class CreateListingDto {
   @IsNotEmpty()
   @IsString()
   readonly listingSector: string;
+
+  @ApiProperty({ description: '_id' })
+  unit: {
+    bedrooms: number;
+    bathrooms: number;
+    parking: number;
+    price: number;
+  };
+
+  @ApiProperty({ description: '_id' })
+  @IsArray()
+  images: string[];
 }
+

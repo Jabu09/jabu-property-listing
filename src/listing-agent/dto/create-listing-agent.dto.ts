@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsPhoneNumber, isPhoneNumber, IsString, IsUrl } from 'class-validator';
 
 export class CreateListingAgentDto {
   @ApiProperty({ description: '_id' })
@@ -13,17 +13,17 @@ export class CreateListingAgentDto {
   readonly lastName: string;
 
   @ApiProperty({ description: '_id' })
-  @IsNotEmpty()
+  @IsEmail()
   @IsString()
   readonly email: string;
 
   @ApiProperty({ description: '_id' })
+  @IsPhoneNumber('ZA')
   @IsNotEmpty()
-  @IsString()
   readonly contactNumber: string;
 
   @ApiProperty({ description: '_id' })
   @IsNotEmpty()
-  @IsString()
+  @IsUrl()
   readonly profileImageUrl: string;
 }

@@ -12,8 +12,8 @@ import { CreateListingAgentDto } from './dto/create-listing-agent.dto';
 import { UpdateListingAgentDto } from './dto/update-listing-agent.dto';
 import { ApiTags } from '@nestjs/swagger';
 
-@Controller('listing-agent')
-@ApiTags('listing-agent')
+@Controller('agent')
+@ApiTags('agent')
 export class ListingAgentController {
   constructor(private readonly listingAgentService: ListingAgentService) {}
 

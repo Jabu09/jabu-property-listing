@@ -11,10 +11,10 @@ export class ListingAgent {
   @Prop({ required: true })
   lastName: string;
 
-  @Prop({ required: true })
+  @Prop({ required: true , unique:true})
   email: string;
 
-  @Prop({ required: true })
+  @Prop({ required: true, unique:true })
   contactNumber: string;
 
   @Prop({ required: true })
