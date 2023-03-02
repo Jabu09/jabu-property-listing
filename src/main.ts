@@ -9,7 +9,6 @@ async function bootstrap() {
     .setTitle('Property listing API')
     .setDescription('Documentation for property listing')
     .setVersion('1.0')
-    .addTag('listing')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

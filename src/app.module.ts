@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ListingModule } from './listing/listing.module';
 import { ListingAgentModule } from './listing-agent/listing-agent.module';
+import { OrganisationModule } from './organisation/organisation.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { ListingAgentModule } from './listing-agent/listing-agent.module';
     ),
     ListingModule,
     ListingAgentModule,
+    OrganisationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
