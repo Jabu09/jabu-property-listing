@@ -14,9 +14,7 @@ import { ConfigModule } from '@nestjs/config';
       load: [],
       isGlobal: true,
     }),
-    MongooseModule.forRoot(
-      `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@cluster0.bpyfdom.mongodb.net/?retryWrites=true&w=majority`,
-    ),
+    MongooseModule.forRoot(`${process.env.CONNECTION_STRING}`),
     ListingModule,
     ListingAgentModule,
     OrganisationModule,
