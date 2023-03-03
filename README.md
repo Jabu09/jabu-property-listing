@@ -58,6 +58,14 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Environmental
+run the following command to create .env file on the root directory `touch .env`
+add the following to the .env file `CONNECTION_STRING=***`
+
+http://localhost:3000/api for swagger api documentation.
+
+Find file called `flow-listing-api-doc.json` post man collection
+the deployed version for the backend is on `https://jabu-property-listing-flow-assment.vercel.app`
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
