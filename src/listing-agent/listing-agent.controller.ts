@@ -6,14 +6,18 @@ import {
   Patch,
   Param,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import { ListingAgentService } from './listing-agent.service';
 import { CreateListingAgentDto } from './dto/create-listing-agent.dto';
 import { UpdateListingAgentDto } from './dto/update-listing-agent.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('agent')
 @ApiTags('agent')
+@ApiBearerAuth('access-token')
+@UseGuards(AuthGuard('jwt'))
 export class ListingAgentController {
   constructor(private readonly listingAgentService: ListingAgentService) {}
 

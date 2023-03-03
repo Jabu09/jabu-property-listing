@@ -60,7 +60,8 @@ $ npm run test:cov
 
 ## Environmental
 run the following command to create .env file on the root directory `touch .env`
-add the following to the .env file `CONNECTION_STRING=***`
+add the following to the .env file `CONNECTION_STRING=*** JWT_REFRESH_SECRET=***
+JWT_ACCESS_SECRET=*** `
 
 http://localhost:3000/api for swagger api documentation.
 

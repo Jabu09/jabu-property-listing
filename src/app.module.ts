@@ -6,6 +6,8 @@ import { ListingModule } from './listing/listing.module';
 import { ListingAgentModule } from './listing-agent/listing-agent.module';
 import { OrganisationModule } from './organisation/organisation.module';
 import { ConfigModule } from '@nestjs/config';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -18,6 +20,8 @@ import { ConfigModule } from '@nestjs/config';
     ListingModule,
     ListingAgentModule,
     OrganisationModule,
+    AuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -6,16 +6,18 @@ import {
   Patch,
   Param,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import { ListingService } from './listing.service';
 import { CreateListingDto } from './dto/create-listing.dto';
 import { UpdateListingDto } from './dto/update-listing.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 
-// @UseGuards(AuthGuard('jwt'))
-// @ApiBearerAuth('access-token')
 @Controller('listing')
 @ApiTags('Listing')
+@ApiBearerAuth('access-token')
+@UseGuards(AuthGuard('jwt'))
 export class ListingController {
   constructor(private readonly listingService: ListingService) {}
 
