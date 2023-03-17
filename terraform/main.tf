@@ -7,7 +7,7 @@ resource "aws_ecr_repository" "nestjs_app" {
 }
 
 module "fargate" {
-  source  = "terraform-aws-modules/ecs/aws/modules/fargate-service"
+  source  = "terraform-aws-modules/ecs/aws//modules/fargate-service"
   version = "~> 3.0"
 
   name = "nestjs-app"
