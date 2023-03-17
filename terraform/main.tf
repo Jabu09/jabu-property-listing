@@ -75,7 +75,7 @@ resource "aws_iam_role_policy_attachment" "this" {
 }
 
 resource "aws_security_group" "this" {
-  name = "nestjs-docker-app-new-three"
+  name = "nestjs-docker-app-new-four"
   description = "Security group for NestJS Docker app"
   vpc_id      = "vpc-0ed56eafa9fc8c75e"
 }
@@ -99,7 +99,7 @@ resource "aws_vpc" "this" {
 }
 
 resource "aws_subnet" "this" {
-  cidr_block = "172.31.1.0/24"
+  cidr_block = "172.31.32.0/20"
   vpc_id     = "vpc-0ed56eafa9fc8c75e"
 
   tags = {
