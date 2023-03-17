@@ -47,6 +47,7 @@ jobs:
 
       - name: Initialize Terraform
         run: terraform init
+        working-directory: terraform
 
       - name: Apply Terraform
         env:
@@ -54,6 +55,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: eu-west-1
         run: terraform apply -auto-approve
+        working-directory: terraform
+
         
 
       
