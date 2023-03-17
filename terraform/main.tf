@@ -92,7 +92,8 @@ resource "aws_security_group_rule" "allow_inbound" {
 
 resource "aws_vpc" "this" {
   cidr_block = "10.0.0.0/16"
-
+  vpc_id     = "vpc-0ed56eafa9fc8c75e"
+  
   tags = {
     Name = local.app_name
   }
