@@ -42,21 +42,18 @@ jobs:
           push: true
           tags:  jaybee095/jabu-property-listing:latest
 
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+      - name: Pull Docker image
+        run: |
+          docker pull jaybee095/jabu-property-listing:latest
 
-      - name: Initialize Terraform
-        run: terraform init -upgrade
-        working-directory: terraform
+      - name: Deploy Docker container
+        run: |
+          docker run -d -p 3000:3000 jaybee095/jabu-property-listing:latest
 
-      - name: Apply Terraform
+      - name: Deploy code
+        run: |
+          ssh ec2-user@your-ec2-instance-ip "cd /path/to/app && git pull && sudo systemctl restart your-app.service"
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: eu-west-1
-        run: terraform apply -auto-approve
-        working-directory: terraform
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
         
