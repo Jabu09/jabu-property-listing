@@ -99,7 +99,7 @@ resource "aws_vpc" "this" {
 }
 
 resource "aws_subnet" "this" {
-  cidr_block = "172.31.0.0/16"
+  cidr_block = "172.16.1.0/16"
   vpc_id     = "vpc-0ed56eafa9fc8c75e"
 
   tags = {
