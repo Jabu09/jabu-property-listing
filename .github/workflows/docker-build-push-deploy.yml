@@ -27,10 +27,28 @@ jobs:
           export JWT_REFRESH_SECRET=${{ secrets.JWT_REFRESH_SECRET }}
           export JWT_ACCESS_SECRET=${{ secrets.JWT_ACCESS_SECRET }}
           ./create_env.sh
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: jaybee095/jabu-property-listing:latest
+          tags:  ${{ steps.login-ecr.outputs.registry }}/jabu-property-listing:latest
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Initialize Terraform
+        run: terraform init
+
+      - name: Apply Terraform
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: terraform apply -auto-approve
+        
+
+      
