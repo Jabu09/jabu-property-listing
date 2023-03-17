@@ -74,8 +74,8 @@ resource "aws_iam_role_policy_attachment" "this" {
   role       = aws_iam_role.execution.name
 }
 
-resource "aws_security_group" "this" {
-  name = local.app_name
+data "aws_security_group" "this" {
+  name = "nestjs-docker-app"
 }
 
 resource "aws_security_group_rule" "allow_inbound" {
