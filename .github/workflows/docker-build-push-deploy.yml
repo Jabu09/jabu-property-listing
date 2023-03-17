@@ -33,4 +33,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: <YOUR_DOCKERHUB_USERNAME>/<YOUR_NESTJS_APP_NAME>:latest
+          tags: jaybee095/jabu-property-listing:latest
