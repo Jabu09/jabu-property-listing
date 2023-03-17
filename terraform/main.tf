@@ -36,7 +36,7 @@ resource "aws_ecs_task_definition" "this" {
 }
 
 resource "aws_iam_role" "execution" {
-  name = "ecs-task-execution-role-new"
+  name = "ecs-task-execution-role-new-two"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -53,7 +53,7 @@ resource "aws_iam_role" "execution" {
 }
 
 resource "aws_iam_role" "task" {
-  name = "ecs-task-role-new"
+  name = "ecs-task-role-new-two"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -75,7 +75,9 @@ resource "aws_iam_role_policy_attachment" "this" {
 }
 
 resource "aws_security_group" "this" {
-  name = "nestjs-docker-app-new-two"
+  name = "nestjs-docker-app-new-three"
+  description = "Security group for NestJS Docker app"
+  vpc_id      = "vpc-0ed56eafa9fc8c75e"
 }
 
 resource "aws_security_group_rule" "allow_inbound" {
