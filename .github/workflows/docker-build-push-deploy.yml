@@ -60,7 +60,3 @@ jobs:
         working-directory: terraform
 
         
-
-
-
-      
