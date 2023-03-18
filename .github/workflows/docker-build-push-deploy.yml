@@ -26,7 +26,7 @@ jobs:
           echo "CONNECTION_STRING=${{ secrets.CONNECTION_STRING }}" >> .env
           echo "JWT_REFRESH_SECRET=${{ secrets.JWT_REFRESH_SECRET }}" >> .env
           echo "JWT_ACCESS_SECRET=${{ secrets.JWT_ACCESS_SECRET }}" >> .env
-          
+
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
@@ -42,21 +42,15 @@ jobs:
           push: true
           tags:  jaybee095/jabu-property-listing:latest
 
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-
-      - name: Initialize Terraform
-        run: terraform init -upgrade
-        working-directory: terraform
-
-      - name: Apply Terraform
+      - name: Deploy to EC2
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: eu-west-1
-        run: terraform apply -auto-approve
-        working-directory: terraform
+          PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          HOST: ec2-54-228-179-211.eu-west-1.compute.amazonaws.com
+          USER: ec2-user # Replace with the appropriate user for your instance
+        run: |
+          echo "$PRIVATE_KEY" > nest-deployment.pem
+          chmod 600 nest-deployment.pem
+          ssh -i nest-deployment.pem $USER@$HOST "docker pull jaybee095/jabu-property-listing:latest && docker stop jabu-property-listing || true && docker rm jabu-property-listing || true && docker run -d --name jabu-property-listing -p 80:3000 jaybee095/jabu-property-listing:latest"
+          rm -f nest-deployment.pem
 
         
