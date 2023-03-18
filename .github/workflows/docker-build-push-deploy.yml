@@ -49,8 +49,9 @@ jobs:
           USER: ec2-user # Replace with the appropriate user for your instance
         run: |
           echo "$PRIVATE_KEY" > nest-deployment.pem
-          chmod 600 nest-deployment.pem
-          ssh -i nest-deployment.pem $USER@$HOST "docker pull jaybee095/jabu-property-listing:latest && docker stop jabu-property-listing || true && docker rm jabu-property-listing || true && docker run -d --name jabu-property-listing -p 80:3000 jaybee095/jabu-property-listing:latest"
+          chmod 400 nest-deployment.pem
+          echo "$HOST ${{ secrets.EC2_SSH_PRIVATE_KEY }}" >> ~/.ssh/known_hosts
+          ssh -i "nest-deployment.pem" $USER@$HOST "docker pull jaybee095/jabu-property-listing:latest && docker stop jabu-property-listing || true && docker rm jabu-property-listing || true && sudo docker run -d -p 80:3000 --name jabu-property-listing jaybee095/jabu-property-listing:latest"
           rm -f nest-deployment.pem
 
         
