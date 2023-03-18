@@ -98,6 +98,14 @@ resource "aws_vpc" "this" {
   }
 }
 
+resource "aws_subnet" "this" {
+  cidr_block = "172.31.1.0/24"
+  vpc_id     = "vpc-0ed56eafa9fc8c75e"
+
+  tags = {
+    Name = local.app_name
+  }
+}
 
 resource "aws_ecs_service" "this" {
   name            = local.app_name
@@ -108,6 +116,7 @@ resource "aws_ecs_service" "this" {
   desired_count = 1
 
   network_configuration {
+    subnets = [aws_subnet.this.id]
 
     assign_public_ip = true
     security_groups  = [aws_security_group.this.id]

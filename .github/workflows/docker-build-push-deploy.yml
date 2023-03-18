@@ -21,12 +21,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Create .env file
+       - name: Create .env file
         run: |
-          export CONNECTION_STRING=${{ secrets.CONNECTION_STRING }}
-          export JWT_REFRESH_SECRET=${{ secrets.JWT_REFRESH_SECRET }}
-          export JWT_ACCESS_SECRET=${{ secrets.JWT_ACCESS_SECRET }}
-          ./create_env.sh
+          echo "CONNECTION_STRING=${{ secrets.CONNECTION_STRING }}" >> .env
+          echo "JWT_REFRESH_SECRET=${{ secrets.JWT_REFRESH_SECRET }}" >> .env
+          echo "JWT_ACCESS_SECRET=${{ secrets.JWT_ACCESS_SECRET }}" >> .env
+          
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
