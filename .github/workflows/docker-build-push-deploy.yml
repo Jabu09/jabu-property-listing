@@ -21,7 +21,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-       - name: Create .env file
+      - name: Create .env file
         run: |
           echo "CONNECTION_STRING=${{ secrets.CONNECTION_STRING }}" >> .env
           echo "JWT_REFRESH_SECRET=${{ secrets.JWT_REFRESH_SECRET }}" >> .env
