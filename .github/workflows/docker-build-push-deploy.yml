@@ -50,6 +50,7 @@ jobs:
         run: |
           echo "$PRIVATE_KEY" > nest-deployment.pem
           chmod 400 nest-deployment.pem
+          mkdir -p ~/.ssh
           echo "$HOST ${{ secrets.EC2_SSH_PRIVATE_KEY }}" >> ~/.ssh/known_hosts
           ssh -i "nest-deployment.pem" $USER@$HOST "docker pull jaybee095/jabu-property-listing:latest && docker stop jabu-property-listing || true && docker rm jabu-property-listing || true && sudo docker run -d -p 80:3000 --name jabu-property-listing jaybee095/jabu-property-listing:latest"
           rm -f nest-deployment.pem
