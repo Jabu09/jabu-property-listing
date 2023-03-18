@@ -20,7 +20,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/listing",
+					"raw": "http://54.228.179.211/listing",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",
@@ -40,7 +40,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/listing/640119adea6b9642210ce5a7",
+					"raw": "http://54.228.179.211/listing/640119adea6b9642210ce5a7",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",
@@ -61,7 +61,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/listing",
+					"raw": "http://54.228.179.211/listing",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",
@@ -90,7 +90,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/listing/640119adea6b9642210ce5a7",
+					"raw": "http://54.228.179.211/listing/640119adea6b9642210ce5a7",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",
@@ -120,7 +120,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/listing/640119adea6b9642210ce5a7",
+					"raw": "http://54.228.179.211/listing/640119adea6b9642210ce5a7",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",
@@ -150,7 +150,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/agent",
+					"raw": "http://54.228.179.211/agent",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",
@@ -170,7 +170,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/agent",
+					"raw": "http://54.228.179.211/agent",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",
@@ -190,7 +190,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/agent/602386722cdb39001e18da08",
+					"raw": "http://54.228.179.211/agent/602386722cdb39001e18da08",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",
@@ -220,7 +220,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/agent/602386722cdb39001e18da08",
+					"raw": "http://54.228.179.211/agent/602386722cdb39001e18da08",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",
@@ -250,7 +250,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/agent/602386722cdb39001e18da08",
+					"raw": "http://54.228.179.211/agent/602386722cdb39001e18da08",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",
@@ -280,7 +280,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/organisation",
+					"raw": "http://54.228.179.211/organisation",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",
@@ -300,7 +300,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/organisation",
+					"raw": "http://54.228.179.211/organisation",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",
@@ -320,7 +320,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/organisation/640114f0e418b20134833a81",
+					"raw": "http://54.228.179.211/organisation/640114f0e418b20134833a81",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",
@@ -350,7 +350,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/organisation/64013795a25b6e2589a65690",
+					"raw": "http://54.228.179.211/organisation/64013795a25b6e2589a65690",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",
@@ -380,7 +380,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://jabu-property-listing-flow-assment.vercel.app/organisation/64013795a25b6e2589a65690",
+					"raw": "http://54.228.179.211/organisation/64013795a25b6e2589a65690",
 					"protocol": "https",
 					"host": [
 						"jabu-property-listing-flow-assment",

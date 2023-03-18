@@ -66,7 +66,7 @@ JWT_ACCESS_SECRET=*** `
 http://localhost:3000/api for swagger api documentation.
 
 Find file called `flow-listing-api-doc.json` post man collection
-the deployed version for the backend is on `https://jabu-property-listing-flow-assment.vercel.app`
+the deployed version for the backend is on `http://54.228.179.211/api`
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
